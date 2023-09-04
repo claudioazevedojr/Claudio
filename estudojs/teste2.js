@@ -19,3 +19,4 @@ console.log(novosValores);
 const [one,...rest] = valores;
 console.log(one); 
 console.log(rest); 
+
