@@ -16,7 +16,8 @@ const valores = [1,2,3,4,5,6,7,8,9,10];
 const novosValores = [0,...valores,11];
 console.log(novosValores);
 
-const [one,...rest] = valores;
-console.log(one); 
+const [one,two,...rest] = valores;
+console.log(one);
+console.log(two); 
 console.log(rest); 
 
