@@ -17,4 +17,4 @@ const animais = [
     console.log(`Espécie: ${especie}`);
     console.log(`Idade: ${idade}`);
     console.log("--------------");
-  }
+  };
