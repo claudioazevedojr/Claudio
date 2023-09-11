@@ -37,7 +37,7 @@ switch(voto){
         break;
     }
     
-    op=prompt(console.log("Deseja continuar a votação? SIM ou NÃO: ")).toUpperCase();
+    op=prompt("Deseja continuar a votação? SIM ou NÃO: ").toUpperCase();
     
 }
 while(op=== "SIM");
