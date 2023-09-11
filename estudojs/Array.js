@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')();
+const prompt= require('prompt-sync')()
 
 function receberInformacoes(nomes = [],idades = [], coresFavoritas = []) {
     
