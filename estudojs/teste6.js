@@ -1,24 +1,30 @@
 const prompt= require('prompt-sync')()
 
+op=prompt("Deseja continuar? SIM ou NÃO: ").toUpperCase();
+
 function receberInformacoes(nomes = [],idades = [], coresFavoritas = []) {
     
-    for (var i = 0; i < 2; i++) {
-      var nome = prompt("Digite o nome da pessoa " + (i + 1) + ":");
-      nomes.push(nome);
-  
-      var idade = parseInt(prompt("Digite a idade de " + nome + ":"));
-      idades.push(idade);
-  
-      var corFavorita = prompt("Digite a cor favorita de " + nome + ":");
-      coresFavoritas.push(corFavorita);
+    while (op==="SIM") {
+        var nome = prompt("Digite o nome da pessoa " + (i + 1) + ":");
+        nomes.push(nome);
+    
+        var idade = parseInt(prompt("Digite a idade de " + nome + ":"));
+        idades.push(idade);
+    
+        var corFavorita = prompt("Digite a cor favorita de " + nome + ":");
+        coresFavoritas.push(corFavorita);
+      }
+    
+      return {
+        nomes: nomes,
+        idades: idades,
+        coresFavoritas: coresFavoritas
+      }; 
+      
+     
+
     }
-  
-    return {
-      nomes: nomes,
-      idades: idades,
-      coresFavoritas: coresFavoritas
-    };
-  }
+    
   
 function imprimirInformacoes(nomes, idades, coresFavoritas) {
     console.log("Lista de Nomes:", nomes);
