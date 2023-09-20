@@ -1,0 +1,14 @@
+{
+  "name": "banconode",
+  "version": "1.0.0",
+  "description": "bando para estudo de node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "educacao"
+  ],
+  "author": "turma back fap noite",
+  "license": "ISC"
+}
