@@ -10,5 +10,6 @@
     "educacao"
   ],
   "author": "turma back fap noite",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
