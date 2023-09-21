@@ -1,8 +1,15 @@
-import { endereco } from "./model/endereco.js";
-import { agencia } from "./model/agencia.js";
-import { cliente } from "./model/cliente.js";
-import { conta } from "./model/conta.js";
+import { Endereco } from './model/endereco.js';
+import { Agencia } from './model/agencia.js';
+import { Cliente } from './model/cliente.js';
+import { Conta } from './model/conta.js';
 
-let ender = new endereco("pe", "Recife", "são josé", "rua da guia", 1000, 305, "500-050");
-let agen = new agencia("softex", 1234, "8134546798", "agsoftex@banco.com", endereco);
-let cli = new cliente("claudio", 81987184655);
+let endAg = new Endereco('PE', "Recife", "São José", "Rua da Guia", 1000, "305", "50080-090");
+let agSoftex = new Agencia("Softex", 1234, "81321264554","agsoftex@banco.com", endAg);
+let endEgito = new Endereco('PE', "Recife", "Boa Viagem", "Rua Setubal", 1234, "508", "50097-090");
+let cliEgito = new Cliente("José Egito", "000.222.555-99", new Date("1985-10-10").toLocaleDateString(), 5858585, "egito@softex.com", "8199999999", endEgito);
+let contaEgito = new Conta(cliEgito, 4321, agSoftex, 1250.00);
+
+contaEgito.depositar(200);
+contaEgito.sacar(500);
+
+console.log(contaEgito);
