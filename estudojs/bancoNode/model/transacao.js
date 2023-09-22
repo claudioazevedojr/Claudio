@@ -1,10 +1,9 @@
-export class transacao{
-    constructor(tipo, data, valor, clienteTransferencia, tranferencia, tipovalor){
+export class Transacao{
+    constructor(tipo, data, valor, cliTransferencia, tipoValor){
         this.tipo = tipo;
         this.data = data;
         this.valor = valor;
-        this.clienteTransferencia = clienteTransferencia;
-        this.tranferencia = tranferencia;
-        this.tipovalor = tipovalor;
+        this.cliTransferencia = cliTransferencia;
+        this.tipoValor = tipoValor;
     }
 }
