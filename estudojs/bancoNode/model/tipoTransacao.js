@@ -1,6 +1,6 @@
 export const TIPOTRANSACAO = {
-    debitar: "DEBITO",
-    creditar: "CREDITO",
-    transferir: "TRANSFERENCIA",
-    pagar: "PAGAMENTO"
+    debitar : "DÉBITO",
+    creditar : "CRÉDITO",
+    transferir : "TRANSFERÊNCIA",
+    pagar : "PAGAMENTO"
 }
