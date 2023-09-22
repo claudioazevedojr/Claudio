@@ -1,8 +1,8 @@
-import { TIPOTRANSACAO } from "./tipoTransacao";
-import { transacao } from "./transacao";
+import { TIPOTRANSACAO } from "./tipoTransacao.js";
+import { Transacao } from "./transacao.js";
 
-export class conta{
-    constructor(cliente, numero, agencia, saldo){
+export class Conta {
+    constructor(cliente, numero, agencia, saldo) {
         this.cliente = cliente;
         this.numero = numero;
         this.agencia = agencia;
@@ -11,22 +11,34 @@ export class conta{
         this.status = true;
         this.transacoes = [];
     }
-    //metodo deposito
-    depositar(valor){
+
+    // depositar da conta
+    depositar(valor) {
         this.saldo += valor;
-        let tras = new transacao(TIPOTRANSACAO.creditar, new Date().toLocaleDateString(), valor, null, '+');
-        this.transacoes.push(tras);
+        let trans = new Transacao(TIPOTRANSACAO.creditar, new Date().toLocaleDateString(), valor, null, '+');
+        this.transacoes.push(trans);
     }
-    //metodo sacar
-    sacar(valor){
-        if(this.saldo <= valor){
-        this.saldo -= valor;
-        let tras = new transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
-        this.transacoes.push(tras);
-         } else
-        console.log('saldo insuficiente');
+
+    // sacar da conta
+    sacar(valor) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            let trans = new Transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
+            this.transacoes.push(trans);
+        } else {
+            // lança um erro
+            console.log('Erro: Saldo insuficiente ' + valor + 'maior do que o saldo' + this.saldo + '.');
+        }
     }
+
+    // transferir da conta
+
+    // realizar pagamento da conta
+
+    // mostrar saldo da conta
+
+    // mostrar extrato da conta
+
+    // toString da conta
+
 }
-
-
-
