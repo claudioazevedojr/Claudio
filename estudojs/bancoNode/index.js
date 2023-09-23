@@ -10,6 +10,6 @@ let cliEgito = new Cliente("José Egito", "000.222.555-99", new Date("1985-10-10
 let contaEgito = new Conta(cliEgito, 4321, agSoftex, 1250.00);
 
 contaEgito.depositar(200);
-contaEgito.sacar(500);
+contaEgito.sacar(1000);
 
 console.log(contaEgito);
