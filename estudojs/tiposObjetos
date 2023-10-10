@@ -1,0 +1,65 @@
+class Dadosempresa{
+    constructor(){
+    this.nome = "Empresa de TI - CCM";
+    this.cnpj = "09.909.678/0007-90";
+    this.endereco ="Rua da Soledade, 89";
+    this.bairro = "Boa Vista";
+    }
+}
+
+class Dadoscontrato{
+    constructor (){
+        this.cabecalho = "Pelo presente instrumento de contrato de suporte as duas partes fazem-se conhecedoras de:"
+        this.tempoevalorcontrato = "Este contrato tem duração de 12 meses. Valor mensal: R$ 400,00";
+        this.valorcontrato = 12*400;
+
+    }
+}
+class Notafiscal extends Dadosempresa{
+    constructor(quantidadedelicencas){
+        super();
+        this.quantidadedelicencas = quantidadedelicencas + ' de cada sistema';
+        this.valornota = 0;
+        this.sistemascontratados =[];   
+    }
+    somarpedido(tiposis, valoritem){      
+            this.valornota += valoritem;
+            this.sistemascontratados.push(`Sistema contratado:${tiposis}  valor:${valoritem}`);                 
+        }         
+}
+
+class Emitircontrato extends Dadoscontrato{
+    constructor(cnpjempr, nomeempr, endempre,listaregra){
+        super();
+        this.cnpjempr = cnpjempr;
+        this.nomeempr = nomeempr;
+        this.endempre = endempre;
+        this.listaregra = [];
+    }
+    regras(regrascontratuais){
+        this.listaregra.push(regrascontratuais);
+
+    }
+}
+
+const TIPOSISTEMAS = {
+    estoque:    "SIS ESTOQUE",
+    financeiro: "SIS FINANCE",
+    fiscal:     "SIS FISCAL ",
+    rh:         "SIS RH e DP",
+    contabil:   "SIS CONTABI"}
+
+//Emissão de nota fiscal do contrato de Produtos
+var ntfiscal = new Notafiscal(4);
+ntfiscal.somarpedido(TIPOSISTEMAS.contabil, 1200);
+ntfiscal.somarpedido(TIPOSISTEMAS.estoque, 1200);
+console.log(ntfiscal);
+
+//Emissão do contrato de Produtos
+var dNotacontrato = new Notafiscal(4);
+var contratoVenda = new Emitircontrato("10.208.768/0009-98","Empresas Alimentos Ltda","Rua José Rufino, 98, Areias, Recife-PE");
+dNotacontrato.somarpedido(TIPOSISTEMAS.contabil, 1200);
+dNotacontrato.somarpedido(TIPOSISTEMAS.estoque, 1200);
+contratoVenda.regras("1 - caso deseje romper o contrato, deverá pagar o valor registrado múltiplicado por 3x");
+contratoVenda.regras("2 - o suporte poderá ser realizado por telefone ou presencialmente.");
+console.log(contratoVenda, dNotacontrato);
