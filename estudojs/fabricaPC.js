@@ -1,4 +1,3 @@
-// Interface para os produtos
 class Computer {
     constructor(ram, hdd, cpu, type) {
       this.ram = ram;
@@ -12,21 +11,21 @@ class Computer {
     }
   }
   
-  // Classe concreta PC
+  
   class PC extends Computer {
     constructor(ram, hdd, cpu) {
       super(ram, hdd, cpu, 'PC');
     }
   }
   
-  // Classe concreta Server
+  
   class Server extends Computer {
     constructor(ram, hdd, cpu) {
       super(ram, hdd, cpu, 'Server');
     }
   }
   
-  // Fábrica para criar instâncias de Computer
+  
   class ComputerFactory {
     createComputer(type, ram, hdd, cpu) {
       if (type === 'PC') {
@@ -39,7 +38,7 @@ class Computer {
     }
   }
   
-  // Exemplo de uso
+  
   const factory = new ComputerFactory();
   const pc = factory.createComputer('PC', 8, 512, 2.4);
   const server = factory.createComputer('Server', 32, 1000, 3.2);
